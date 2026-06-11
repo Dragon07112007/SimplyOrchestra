@@ -8,11 +8,11 @@ on:
 
 jobs:
   build-ios:
-    name: Build unsigned iOS IPA
+    name: Build SimplyOrchestra unsigned iOS IPA
     runs-on: macos-latest
     defaults:
       run:
-        working-directory: sideload_dummy
+        working-directory: simplyorchestra
 
     steps:
       - name: Checkout repository
@@ -37,10 +37,10 @@ jobs:
           mkdir -p build/ios/ipa/Payload
           cp -R build/ios/iphoneos/Runner.app build/ios/ipa/Payload/
           cd build/ios/ipa
-          zip -r TaktstockTrainer.ipa Payload
+          zip -r SimplyOrchestra.ipa Payload
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
         with:
-          name: TaktstockTrainer-unsigned-ipa
-          path: sideload_dummy/build/ios/ipa/TaktstockTrainer.ipa
+          name: SimplyOrchestra-unsigned-ipa
+          path: simplyorchestra/build/ios/ipa/SimplyOrchestra.ipa
