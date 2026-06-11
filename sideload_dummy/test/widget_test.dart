@@ -1,22 +1,16 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:sideload_dummy/main.dart';
+import 'package:sideload_dummy/app.dart';
 
 void main() {
-  testWidgets('counter increments and resets', (WidgetTester tester) async {
-    await tester.pumpWidget(const SideloadDummyApp());
+  testWidgets('shows trainer controls', (WidgetTester tester) async {
+    await tester.pumpWidget(const TaktstockTrainerApp());
 
-    expect(find.text('Sideload Dummy'), findsOneWidget);
-    expect(find.text('Running on iPhone'), findsOneWidget);
-    expect(find.text('0'), findsOneWidget);
-
-    await tester.tap(find.text('Increment'));
-    await tester.pump();
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-
-    await tester.tap(find.text('Reset'));
-    await tester.pump();
-    expect(find.text('0'), findsOneWidget);
+    expect(find.text('Taktstock Trainer'), findsOneWidget);
+    expect(find.text('84'), findsOneWidget);
+    expect(find.text('BPM'), findsOneWidget);
+    expect(find.text('Beat 1 / 4'), findsOneWidget);
+    expect(find.text('Waiting'), findsOneWidget);
+    expect(find.text('Start Training'), findsOneWidget);
   });
 }

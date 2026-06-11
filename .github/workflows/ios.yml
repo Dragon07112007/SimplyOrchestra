@@ -37,10 +37,10 @@ jobs:
           mkdir -p build/ios/ipa/Payload
           cp -R build/ios/iphoneos/Runner.app build/ios/ipa/Payload/
           cd build/ios/ipa
-          zip -r SideloadDummy.ipa Payload
+          zip -r TaktstockTrainer.ipa Payload
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SideloadDummy-unsigned-ipa
-          path: sideload_dummy/build/ios/ipa/SideloadDummy.ipa
+          name: TaktstockTrainer-unsigned-ipa
+          path: sideload_dummy/build/ios/ipa/TaktstockTrainer.ipa
